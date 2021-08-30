@@ -13,3 +13,12 @@
 #
 # You should have received a copy of the GNU Affero General Public License
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+from os import listdir, mkdir
+
+if "raw_files" not in listdir():
+    mkdir("raw_files")
+
+from services.converter.converter import convert
+
+__all__ = ["convert"]
