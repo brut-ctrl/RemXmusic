@@ -37,10 +37,9 @@ from pyrogram.errors import FloodWait, MessageNotModified
 from pyrogram.types import Message
 from youtube_search import YoutubeSearch
 from youtubesearchpython import SearchVideos
-from Python_ARQ import ARQ
 
-from config import DURATION_LIMIT
-from modules.play import arq
+from DaisyXMusic.config import DURATION_LIMIT
+from DaisyXMusic.modules.play import arq
 
 
 @Client.on_message(filters.command("song") & ~filters.channel)
@@ -74,7 +73,7 @@ def song(client, message):
         m.edit("⛔ Found Nothing.\n\nTry another keywork or maybe spell it properly.")
         print(str(e))
         return
-    m.edit("📥 Downloading the song ")
+    m.edit("Downloading the song ")
     try:
         with youtube_dl.YoutubeDL(ydl_opts) as ydl:
             info_dict = ydl.extract_info(link, download=False)
@@ -298,7 +297,7 @@ async def jssong(_, message):
     is_downloading = True
     text = message.text.split(None, 1)[1]
     query = text.replace(" ", "%20")
-    m = await message.reply_text("🔍 Searching...")
+    m = await message.reply_text("Searching...")
 
     # ======= Copied from https://github.com/TheHamkerCat/WilliamButcherBot/blob/dev/wbb/modules/music.py line 170 ========
 
@@ -430,22 +429,3 @@ async def ytmusic(client, message: Message):
     for files in (sedlyf, file_stark):
         if files and os.path.exists(files):
             os.remove(files)
-
-
-# Song Lyrics
-
-
-@Client.on_message(filters.command(["lyrics", f"lyrics@{BOT_USERNAME}"]))
-async def lyrics_func(_, message):
-    if len(message.command) < 2:
-        await message.reply_text("**Sike That's The Wrong Command Usage!** \nUse `/lyrics` (song name)")
-        return
-    m = await message.reply_text("**Searching For Song Lyrics**")
-    query = message.text.strip().split(None, 1)[1]
-    song = await arq.lyrics(query)
-    lyrics = song.result
-    if len(lyrics) < 4095:
-        await m.edit(f"__{lyrics}__")
-        return
-    lyrics = await paste(lyrics)
-    await m.edit(f"**Oops! Lyrics Too Long To Send!** \n**Your Song Lyrics: [Click Here]({lyrics})**")
