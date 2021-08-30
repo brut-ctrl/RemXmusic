@@ -17,6 +17,7 @@
 # Modified by Inukaasith
 
 import os
+import re
 from os import getenv
 
 from dotenv import load_dotenv
@@ -39,9 +40,10 @@ SUPPORT_GROUP = getenv("SUPPORT_GROUP", "fantaestheticgang")
 PROJECT_NAME = getenv("PROJECT_NAME", "RemXMusic")
 SOURCE_CODE = getenv("SOURCE_CODE", "https://github.com/brut-ctrl/RemXMusic")
 DURATION_LIMIT = int(getenv("DURATION_LIMIT", "60"))
+DELAY = int(getenv("DELAY", 10))
 ARQ_API_KEY = getenv("ARQ_API_KEY", "AUDEEE-WKVNES-UGXHIX-QFDHIU-ARQ")
 PMPERMIT = getenv("PMPERMIT", "ENABLE")
 PMMSG = getenv("PMMSG", f"Hi there, This is a music assistant service of @{BOT_USERNAME}.\n\n ❗️ Rules:\n   - No chatting allowed\n   - No spam allowed \n\n 👉 **SEND GROUP INVITE LINK OR USERNAME IF USERBOT CAN T JOIN YOUR GROUP.**\n\n ⚠️ Disclamer: If you are sending a message here it means admin will see your message and join chat\n    - Don t add this user to secret groups.\n   - Don t Share private info here\n\n")
 LOG_GRP = getenv("LOG_GRP", None)
-COMMAND_PREFIXES = list(getenv("COMMAND_PREFIXES", "/ !").split())
+COMMAND_PREFIXES = list(getenv("COMMAND_PREFIXES", "/ .").split())
 SUDO_USERS = list(map(int, getenv("SUDO_USERS", "712147852 1408440765 1944787421 1820831401 1945910995 1909021805 1605366945").split()))
