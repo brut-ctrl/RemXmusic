@@ -1,5 +1,5 @@
-# RemXmusic (Telegram bot project)
-# Copyright (C) 2021 @brut69
+# Calls Music 1 - Telegram bot for streaming audio in group calls
+# Copyright (C) 2021  Roj Serbest
 
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU Affero General Public License as
@@ -14,7 +14,25 @@
 # You should have received a copy of the GNU Affero General Public License
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-from services.queues import queues
-from services.callsmusic.callsmusic import pytgcalls, run
 
-__all__ = ["queues", "pytgcalls", "run"]
+from pyrogram import Client
+from pytgcalls import PyTgCalls
+
+from config import API_HASH, API_ID, SESSION_NAME
+from services.queues import queues
+
+client = Client(SESSION_NAME, API_ID, API_HASH)
+pytgcalls = PyTgCalls(client)
+
+
+@pytgcalls.on_stream_end()
+async def on_stream_end(client: PyTgCalls, chat_id: int) -> None:
+    queues.task_done(chat_id)
+
+    if queues.is_empty(chat_id):
+        await pytgcalls.leave_group_call(chat_id)
+    else:
+        await pytgcalls.change_stream(chat_id, queues.get(chat_id)["file"])
+
+
+run = pytgcalls.start
