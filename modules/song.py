@@ -37,9 +37,10 @@ from pyrogram.errors import FloodWait, MessageNotModified
 from pyrogram.types import Message
 from youtube_search import YoutubeSearch
 from youtubesearchpython import SearchVideos
+from Python_ARQ import ARQ
 
-from DaisyXMusic.config import DURATION_LIMIT
-from DaisyXMusic.modules.play import arq
+from config import DURATION_LIMIT
+from modules.play import arq
 
 
 @Client.on_message(filters.command("song") & ~filters.channel)
