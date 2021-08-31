@@ -28,7 +28,7 @@
 
 • Get pyrogram (p)  `SESSION` from here:
 
-[![Run on Repl.it](https://repl.it/badge/github/SpEcHiDe/GenerateStringSession)](https://replit.com/@brut69/StringSession)
+[![Run on Repl.it](https://img.shields.io/badge/repl.it-generateStringName-yellowgreen)](https://replit.com/@brut69/StringSession)
 
 ### **Commands for Group**
 ### **For all in group**
