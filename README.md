@@ -1,11 +1,12 @@
 <h1 align="centre">RemXmusic 🎶 </h1> 
 
 ### A bot that can play music on Telegram Group and Channel Voice Chats
-#### POWERED BY [PYTGCALLS](https://github.com/pytgcalls/pytgcalls)
 
 <p align="center">
   <img src="https://telegra.ph/file/c57334fb8401a3aeafc4c.jpg">
 </p>
+
+### **POWERED BY** [PYTGCALLS](https://github.com/pytgcalls/pytgcalls)
 
 <h2> Features </h2>
 
@@ -21,7 +22,7 @@
 - **Channel Music Play**
 - **Keyboard selection support for youtube play**
 
-## 🚀 Deployment
+## 🚀 **Deployment**
 
 [![Deploy+on+Heroku](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/brut-ctrl/RemXmusic)
 
