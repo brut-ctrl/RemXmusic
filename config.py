@@ -26,7 +26,7 @@ if os.path.exists("local.env"):
     load_dotenv("local.env")
 
 que = {}
-SESSION_NAME = getenv("SESSION_NAME", "BQC3XmKBGvltSJu2rAvM88LXTt9hZBb4LNdn6Fw9pR4ZnxPxZK5IN0Tm6ABCVj1EqWn-784oEGy_A2HuKcR_IO4hw7A7eroFz-vZIhjDaCRdOIh56beZj-05B7dhLZ8AamoJ1Rz_5gm790UQWmxwv7QXwHVmDNaCXBLqaEWro7dKxi6CViKzjQn9jDHg_OAwZsn12ZUZ2NG4l1EIQXToiMz_n5CpAHW---SOhc87AZDb9qs5JIfBKyIFuYgZVN123r4u2KEKW2FPoBbZAgnrCCuetCB-2IqPbUJeRfXz1PeiYlhmlqwFW-36Stf9a1o7TeVsV4bBhMqMGuLkgYE6j9FKc_w-0wA")
+SESSION_NAME = getenv("SESSION_NAME", "BQAvKXf1GjrjXXg9vrNUoA9fHdsEGSJ_2yGOhtVl6y4i7J-NICOI8tE-V8OGXmzqvkmZCtZPz7VDHaAyBEdrbjEtsQdSMUC8X0XGqdvGhOdPctm4KwZBLynV27PjD3cwEOEEQJoIBTDqS6YQSOTCkyg8N3tk-rfTa5wG3fYyZJqzBo3sxfzY5kw3mAZ2cdoOIWYIPLcpr4ubks6a3peUf_radlkgHEjrx42Jyz_imGe2gsNngUQWRFhyWIQFugrRWhUe6ltdkkNCM8wo0ONAwqTSjno_OgS6q1qOVk-VQ5q-LqGm91azBDB-FNqXftmFvoN93Nh56F7Wvru5f2f8QTafc_w-0wA")
 BOT_TOKEN = getenv("BOT_TOKEN", "1751785670:AAHgkTbvVzJwI8_2H7LAyIA5wDVy_sgRVOY")
 BOT_NAME = getenv("BOT_NAME", "𝚁𝚎𝚖 𝙼𝚞𝚜𝚒𝚌")
 UPDATES_CHANNEL = getenv("UPDATES_CHANNEL", "queengemoy_project")
