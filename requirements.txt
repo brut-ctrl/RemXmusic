@@ -14,7 +14,6 @@ ffmpeg
 pillow
 dnspython
 python-arq
-py-tgcalls==0.5.5
 future
 psutil
 wget
