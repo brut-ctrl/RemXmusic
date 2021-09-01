@@ -27,15 +27,15 @@ if os.path.exists("local.env"):
 
 que = {}
 SESSION_NAME = getenv("SESSION_NAME", "BQAvKXf1GjrjXXg9vrNUoA9fHdsEGSJ_2yGOhtVl6y4i7J-NICOI8tE-V8OGXmzqvkmZCtZPz7VDHaAyBEdrbjEtsQdSMUC8X0XGqdvGhOdPctm4KwZBLynV27PjD3cwEOEEQJoIBTDqS6YQSOTCkyg8N3tk-rfTa5wG3fYyZJqzBo3sxfzY5kw3mAZ2cdoOIWYIPLcpr4ubks6a3peUf_radlkgHEjrx42Jyz_imGe2gsNngUQWRFhyWIQFugrRWhUe6ltdkkNCM8wo0ONAwqTSjno_OgS6q1qOVk-VQ5q-LqGm91azBDB-FNqXftmFvoN93Nh56F7Wvru5f2f8QTafc_w-0wA")
-BOT_TOKEN = getenv("BOT_TOKEN", "1751785670:AAHgkTbvVzJwI8_2H7LAyIA5wDVy_sgRVOY")
-BOT_NAME = getenv("BOT_NAME", "𝚁𝚎𝚖 𝙼𝚞𝚜𝚒𝚌")
+BOT_TOKEN = getenv("BOT_TOKEN", "1928719455:AAEAM3gkCh43QweVsr_KTKeMtkYhMO5RKdg")
+BOT_NAME = getenv("BOT_NAME", "Rem Music")
 UPDATES_CHANNEL = getenv("UPDATES_CHANNEL", "queengemoy_project")
 BG_IMAGE = getenv("BG_IMAGE", "https://telegra.ph/file/9a0bfe8b4b6478c6979a4.png")
 admins = {}
 API_ID = int(getenv("API_ID", "7703315"))
 API_HASH = getenv("API_HASH", "43118491ea08de184cbbcd11a93398ec")
-BOT_USERNAME = getenv("BOT_USERNAME", "RemxMusic69_bot")
-ASSISTANT_NAME = getenv("ASSISTANT_NAME", "RamxMusic69_bot")
+BOT_USERNAME = getenv("BOT_USERNAME", "RemMusic_bot")
+ASSISTANT_NAME = getenv("ASSISTANT_NAME", "RamMusicAsisstant_bot")
 SUPPORT_GROUP = getenv("SUPPORT_GROUP", "fantaestheticgang")
 PROJECT_NAME = getenv("PROJECT_NAME", "RemXMusic")
 SOURCE_CODE = getenv("SOURCE_CODE", "https://github.com/brut-ctrl/RemXMusic")
