@@ -16,6 +16,7 @@ dnspython
 python-arq
 future
 psutil
+pytgcalls
 wget
 bs4
 gitpython
