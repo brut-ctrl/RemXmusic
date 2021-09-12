@@ -14,7 +14,9 @@
 # You should have received a copy of the GNU Affero General Public License
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+from pyrogram import Client
 from services.queues import queues
 from services.callsmusic.callsmusic import pytgcalls, run
+import config
 
 __all__ = ["queues", "pytgcalls", "run"]
