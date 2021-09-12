@@ -19,4 +19,4 @@ psutil
 wget
 bs4
 gitpython
-pytgcalls==3.0.0.dev19
+
