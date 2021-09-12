@@ -15,6 +15,6 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 from services.queues import queues
-from services.callsmusic.callsmusic import py-tgcalls, run
+from services.callsmusic.callsmusic import pytgcalls, run
 
-__all__ = ["queues", "py-tgcalls", "run"]
+__all__ = ["queues", "pytgcalls", "run"]
