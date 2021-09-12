@@ -19,4 +19,4 @@ psutil
 wget
 bs4
 gitpython
-
+youtube-dl
