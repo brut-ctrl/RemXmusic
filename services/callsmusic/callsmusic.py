@@ -16,17 +16,17 @@
 
 
 from pyrogram import Client
-from pytgcalls import GroupCall
+from pytgcalls import PyTgCalls
 
 from config import API_HASH, API_ID, SESSION_NAME
 from services.queues import queues
 
 client = Client(SESSION_NAME, API_ID, API_HASH)
-pytgcalls = GroupCall(client)
+pytgcalls = PyTgCalls(client)
 
 
 @pytgcalls.on_stream_end()
-async def on_stream_end(client: GroupCall, chat_id: int) -> None:
+async def on_stream_end(client: PyTgCalls, chat_id: int) -> None:
     queues.task_done(chat_id)
 
     if queues.is_empty(chat_id):
