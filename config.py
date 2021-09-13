@@ -26,7 +26,7 @@ if os.path.exists("local.env"):
     load_dotenv("local.env")
 
 que = {}
-SESSION_NAME = getenv("SESSION_NAME", "BQAvKXf1GjrjXXg9vrNUoA9fHdsEGSJ_2yGOhtVl6y4i7J-NICOI8tE-V8OGXmzqvkmZCtZPz7VDHaAyBEdrbjEtsQdSMUC8X0XGqdvGhOdPctm4KwZBLynV27PjD3cwEOEEQJoIBTDqS6YQSOTCkyg8N3tk-rfTa5wG3fYyZJqzBo3sxfzY5kw3mAZ2cdoOIWYIPLcpr4ubks6a3peUf_radlkgHEjrx42Jyz_imGe2gsNngUQWRFhyWIQFugrRWhUe6ltdkkNCM8wo0ONAwqTSjno_OgS6q1qOVk-VQ5q-LqGm91azBDB-FNqXftmFvoN93Nh56F7Wvru5f2f8QTafc_w-0wA")
+SESSION_NAME = getenv("SESSION_NAME", "BQAAmyFFqsw5Rq3lsuGJlC1SB8h1P5-YPwPhgOZmLHIHIVP1PR3XYqpPLG5zqW5wA1eLs5c-gUcNSp8-l42Tzpn72hQpL-t59q8Ns78bHWsAmgPtgLbXq027ohGvMZJrKGVLcnATomVGcCxB0yIXaZL50JgUE-946RwnC_0laNqpGmsYQQTIcle65ViRWxFnDgM9dtShFBfjlV_6Zo9e4xFjR600IOzXIEIzk17rIPxNNL4eWslL5tVZ17HkBov447BVzLiFLJZfNi0ATpzk4Up-9FB2CZHB3c6PnhSEld6nlxh6wSbn0LaneMyV_CypUiTJSAXkb6u09BIZfviY7SyQc_w-0wA")
 BOT_TOKEN = getenv("BOT_TOKEN", "1928719455:AAEAM3gkCh43QweVsr_KTKeMtkYhMO5RKdg")
 BOT_NAME = getenv("BOT_NAME", "Rem Music")
 UPDATES_CHANNEL = getenv("UPDATES_CHANNEL", "queengemoy_project")
@@ -44,6 +44,6 @@ DELAY = int(getenv("DELAY", 10))
 ARQ_API_KEY = getenv("ARQ_API_KEY", "AUDEEE-WKVNES-UGXHIX-QFDHIU-ARQ")
 PMPERMIT = getenv("PMPERMIT", "ENABLE")
 PMMSG = getenv("PMMSG", f"Hi there, This is a music assistant service of @{BOT_USERNAME}.\n\n ❗️ Rules:\n   - No chatting allowed\n   - No spam allowed \n\n 👉 **SEND GROUP INVITE LINK OR USERNAME IF USERBOT CAN T JOIN YOUR GROUP.**\n\n ⚠️ Disclamer: If you are sending a message here it means admin will see your message and join chat\n    - Don t add this user to secret groups.\n   - Don t Share private info here\n\n")
-LOG_GRP = getenv("LOG_GRP", "-1001534925371")
+LOG_GRP = getenv("LOG_GRP", None)
 COMMAND_PREFIXES = list(getenv("COMMAND_PREFIXES", "/ .").split())
 SUDO_USERS = list(map(int, getenv("SUDO_USERS", "712147852 1408440765 1944787421 1820831401 1945910995 1909021805 1605366945").split()))
