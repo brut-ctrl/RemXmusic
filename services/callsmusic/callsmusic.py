@@ -89,3 +89,5 @@ def resume(chat_id: int) -> bool:
     get_instance(chat_id).resume_playout()
     active_chats[chat_id]["playing"] = True
     return True
+
+run = pytgcalls.start
