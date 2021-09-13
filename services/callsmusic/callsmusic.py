@@ -90,4 +90,4 @@ def resume(chat_id: int) -> bool:
     active_chats[chat_id]["playing"] = True
     return True
 
-run = pytgcalls.start
+run = client.run
