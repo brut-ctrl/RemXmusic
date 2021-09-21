@@ -23,7 +23,7 @@ from config import API_HASH, API_ID, SESSION_NAME
 from services.queues import queues
 
 client = Client(SESSION_NAME, API_ID, API_HASH)
-#groupcall = GroupCall(client)
+groupcall = GroupCall(client)
 
 
 instances: Dict[int, GroupCall] = {}
