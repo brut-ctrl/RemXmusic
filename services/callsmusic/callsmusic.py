@@ -23,7 +23,7 @@ from config import API_HASH, API_ID, SESSION_NAME
 from services.queues import queues
 
 client = Client(SESSION_NAME, API_ID, API_HASH)
-groupcall = GroupCall(client)
+pytgcalls = GroupCall(client)
 
 
 instances: Dict[int, GroupCall] = {}
@@ -90,4 +90,4 @@ def resume(chat_id: int) -> bool:
     active_chats[chat_id]["playing"] = True
     return True
 
-run = client.run
+run = pytgcalls.start
