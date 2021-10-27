@@ -17,7 +17,7 @@
 
 from typing import Dict
 from pyrogram import Client
-from groupcall import GroupCall
+#from groupcall import GroupCall
 from pytgcalls import GroupCall
 
 from config import API_HASH, API_ID, SESSION_NAME
