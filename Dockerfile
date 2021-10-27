@@ -1,11 +1,8 @@
-FROM python:3.9.6-slim-buster
+FROM python:3.9.7
 
 RUN apt-get update && apt-get upgrade -y
-RUN apt-get install git -y curl ffmpeg python3-pip opus-tools
+RUN apt-get install git curl python3-pip ffmpeg -y
 RUN python3.9 -m pip install -U pip
-RUN curl -sL https://deb.nodesource.com/setup_16.x | bash -
-RUN apt-get install -y nodejs
-RUN npm i -g npm
 RUN mkdir /app/
 
 COPY . /app/
