@@ -1,6 +1,6 @@
-pytgcalls[pyrogram]
-TgCrypto
-py-tgcalls==0.8.1rc1
+pyrogram
+tgcrypto
+pytgcalls==2.1.0
 python-dotenv
 requests
 aiohttp
