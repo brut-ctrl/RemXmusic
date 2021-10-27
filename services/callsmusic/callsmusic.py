@@ -17,6 +17,7 @@
 from typing import Dict
 
 from pytgcalls import GroupCallFactory
+from config import API_HASH, API_ID, SESSION_NAME
 
 from services.callsmusic import client
 from services.queues import queues
