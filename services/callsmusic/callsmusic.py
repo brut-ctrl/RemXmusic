@@ -14,22 +14,26 @@
 # You should have received a copy of the GNU Affero General Public License
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+
 from typing import Dict
+from pyrogram import Client
+from groupcall import GroupCall
 
-from pytgcalls import GroupCallFactory
-
-from services.callsmusic import client
+from config import API_HASH, API_ID, SESSION_NAME
 from services.queues import queues
+import config
 
-instances: Dict[int, GroupCallFactory] = {}
+client = Client(config.SESSION_NAME, config.API_ID, config.API_HASH)
+groupcall = GroupCall(client)
+
+
+instances: Dict[int, GroupCall] = {}
 active_chats: Dict[int, Dict[str, bool]] = {}
 
 
 def init_instance(chat_id: int):
     if chat_id not in instances:
-        instances[chat_id] = GroupCallFactory(
-            client, outgoing_audio_bitrate_kbit=320
-        ).get_file_group_call()
+        instances[chat_id] = GroupCall(client)
 
     instance = instances[chat_id]
 
@@ -43,25 +47,14 @@ def init_instance(chat_id: int):
             instance.input_filename = queues.get(chat_id)["file"]
 
 
-def remove(chat_id: int):
-    if chat_id in instances:
-        del instances[chat_id]
-
-    if not queues.is_empty(chat_id):
-        queues.clear(chat_id)
-
-    if chat_id in active_chats:
-        del active_chats[chat_id]
-
-
-def get_instance(chat_id: int) -> GroupCallFactory:
+def get_instance(chat_id: int) -> GroupCall:
     init_instance(chat_id)
     return instances[chat_id]
 
 
 async def start(chat_id: int):
     await get_instance(chat_id).start(chat_id)
-    active_chats[chat_id] = {"playing": True, "muted": False}
+    active_chats[chat_id] = {"playing": True}
 
 
 async def stop(chat_id: int):
@@ -98,24 +91,4 @@ def resume(chat_id: int) -> bool:
     active_chats[chat_id]["playing"] = True
     return True
 
-
-async def mute(chat_id: int) -> int:
-    if chat_id not in active_chats:
-        return 2
-    elif active_chats[chat_id]["muted"]:
-        return 1
-
-    await get_instance(chat_id).set_is_mute(True)
-    active_chats[chat_id]["muted"] = True
-    return 0
-
-
-async def unmute(chat_id: int) -> int:
-    if chat_id not in active_chats:
-        return 2
-    elif not active_chats[chat_id]["muted"]:
-        return 1
-
-    await get_instance(chat_id).set_is_mute(False)
-    active_chats[chat_id]["muted"] = False
-    return 0
+run = client.run
