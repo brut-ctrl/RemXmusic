@@ -21,6 +21,10 @@ from pytgcalls import GroupCallFactory
 from services.callsmusic import client
 from services.queues import queues
 
+from pyrogram import Client
+import config
+
+client = Client(config.SESSION_NAME, config.API_ID, config.API_HASH)
 instances: Dict[int, GroupCallFactory] = {}
 active_chats: Dict[int, Dict[str, bool]] = {}
 
@@ -119,3 +123,5 @@ async def unmute(chat_id: int) -> int:
     await get_instance(chat_id).set_is_mute(False)
     active_chats[chat_id]["muted"] = False
     return 0
+
+run = client.run
