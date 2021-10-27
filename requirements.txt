@@ -1,13 +1,13 @@
-pyrogram
+pytgcalls[pyrogram]
 TgCrypto
-pytgcalls==2.1.0
+py-tgcalls==0.8.1rc1
 python-dotenv
 requests
 aiohttp
 youtube_search_python
 asyncio
-yt-dlp
 youtube_search
+yt-dlp
 youtube-dl
 search_engine_parser
 wget
