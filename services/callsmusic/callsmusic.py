@@ -21,7 +21,6 @@ from config import API_HASH, API_ID, SESSION_NAME
 
 from .callsmusic import client
 from .callsmusic import group_call_instances
-from services.callsmusic import client
 from services.queues import queues
 from pyrogram import filters
 from pyrogram import Client
