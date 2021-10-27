@@ -40,6 +40,7 @@ from youtube_search import YoutubeSearch
 from config import BOT_NAME as bn
 from config import UPDATES_CHANNEL as updateschannel
 from config import ARQ_API_KEY, DURATION_LIMIT, que
+from config import UPDATES_CHANNEL as updateschannel
 from function.admins import admins as a
 from helpers.admins import get_administrators
 from helpers.channelmusic import get_chat_id
@@ -61,6 +62,8 @@ arq = ARQ("https://thearq.tech", ARQ_API_KEY, aiohttpsession)
 
 DISABLED_GROUPS = []
 useer ="NaN"
+
+
 def cb_admin_check(func: Callable) -> Callable:
     async def decorator(client, cb):
         admemes = a.get(cb.message.chat.id)
