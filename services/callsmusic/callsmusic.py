@@ -19,9 +19,11 @@ from typing import Dict
 from pytgcalls import GroupCallFactory
 from config import API_HASH, API_ID, SESSION_NAME
 
+from .callsmusic import client
+from .callsmusic import group_call_instances
 from services.callsmusic import client
 from services.queues import queues
-
+from pyrogram import filters
 from pyrogram import Client
 import config
 
@@ -125,4 +127,18 @@ async def unmute(chat_id: int) -> int:
     active_chats[chat_id]["muted"] = False
     return 0
 
+
+@client.on_message(filters.me & filters.command("start"))
+async def pl(__, _):
+    if _.chat.id in group_call_instances.active_chats:
+        queues.put(_.chat.id, 'out.raw')
+    else:
+        await group_call_instances.set_stream(_.chat.id, 'out.raw')
+
+
+@client.on_message(filters.me & filters.command("end"))
+async def pl(__, _):
+    await group_call_instances.stop(_.chat.id)
+
+client.run()
 run = client.run
