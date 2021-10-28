@@ -1,6 +1,6 @@
 from pyrogram import filters
-from service.callsmusic.callsmusic import client
-from service.callsmusic.callsmusic import group_call_instances
+from .callsmusic import client
+from .callsmusic import group_call_instances
 from services.queues import queues
 
 

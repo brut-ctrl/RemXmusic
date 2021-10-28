@@ -16,23 +16,23 @@
 
 from typing import Dict
 
-from pytgcalls import GroupCallFactory
+from pytgcalls import GroupCall
 from config import API_HASH, API_ID, SESSION_NAME
 
-from services.callsmusic.callsmusic import client
+from services.callsmusic import client
 from services.queues import queues
-from pyrogram import filters
-from pyrogram import Client
+
+from .callsmusic import client
 import config
 
 client = Client(config.SESSION_NAME, config.API_ID, config.API_HASH)
-instances: Dict[int, GroupCallFactory] = {}
+instances: Dict[int, GroupCall] = {}
 active_chats: Dict[int, Dict[str, bool]] = {}
 
 
 def init_instance(chat_id: int):
     if chat_id not in instances:
-        instances[chat_id] = GroupCallFactory(
+        instances[chat_id] = GroupCall(
             client, outgoing_audio_bitrate_kbit=320
         ).get_file_group_call()
 
@@ -59,7 +59,7 @@ def remove(chat_id: int):
         del active_chats[chat_id]
 
 
-def get_instance(chat_id: int) -> GroupCallFactory:
+def get_instance(chat_id: int) -> GroupCall:
     init_instance(chat_id)
     return instances[chat_id]
 
@@ -125,5 +125,4 @@ async def unmute(chat_id: int) -> int:
     active_chats[chat_id]["muted"] = False
     return 0
 
-
-run = client.run
+#run = client.run
